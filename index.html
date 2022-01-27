@@ -21,26 +21,29 @@
     <div class="container vh-100">
       <div class="row">
         <div class="col-3 d-flex align-items-center justify-content-center">
-          <i class="fas fa-angle-left fa-4x"></i>
+          <i class="fas fa-angle-left fa-4x" @click="prevPic" @mouseenter="stopAutoplay"
+            @mouseleave="startAutoplay"></i>
         </div>
         <div class="col-6">
-          <div class="slider d-flex align-items-center">
-            <img class="img-fluid" src="images/image1.jpg" alt="" />
-            <div class="slider-dots">
-              <div class="dot mx-2 active"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
+          <div id="slider" class="d-flex align-items-center">
+            <img v-for="(image, index) in images" v-if="isActive (index)" class="img-fluid" :src="image"
+              :alt="`Immagine ${index +1}`" />
+            <div class="slider-dots" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
+              <div class="dot mx-2" v-for="(image, index) in images" :class="{active: isActive(index)}"
+                @click="setPic(index)"></div>
             </div>
+            <button class="rounded" :class="autoplayButton.className" @click="toggleAutoplay">{{
+              autoplayButton.text}}</button>
           </div>
         </div>
         <div class="col-3 d-flex align-items-center justify-content-center">
-          <i class="fas fa-angle-right fa-4x"></i>
+          <i class="fas fa-angle-right fa-4x" @click="nextPic" @mouseenter="stopAutoplay"
+            @mouseleave="startAutoplay"></i>
         </div>
       </div>
     </div>
   </div>
-  <script src="js/script.js"></script>
+  <script src=" js/script.js"></script>
 </body>
 
 </html>
