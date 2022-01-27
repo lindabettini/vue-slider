@@ -32,8 +32,8 @@
               <div class="dot mx-2" v-for="(image, index) in images" :class="{active: isActive(index)}"
                 @click="setPic(index)"></div>
             </div>
-            <button class="rounded" :class="autoplayButton.className" @click="toggleAutoplay">{{
-              autoplayButton.text}}</button>
+            <!-- BUTTON (SE DISATTIVO AUTOPLAY) -->
+            <!-- <button class="rounded" :class="autoplayButton.className" @click="toggleAutoplay">{{autoplayButton.text}}</button> -->
           </div>
         </div>
         <div class="col-3 d-flex align-items-center justify-content-center">
