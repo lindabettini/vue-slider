@@ -49,8 +49,12 @@ const app = new Vue ({
             this.isAutoplay = false;
         },
         
+        created() {
+            this.startAutoplay();
+        }
+
         // // TOGGLE AUTOPLAY PER EVENTUALE BUTTON "PLAY"
-        toggleAutoplay(){
+        /*toggleAutoplay(){
             if(this.isAutoplay){
                 this.stopAutoplay();
                 this.autoplayButton.text = 'Play'; 
@@ -61,6 +65,6 @@ const app = new Vue ({
                 this.autoplayButton.className = 'btn-secondary'
             }
             this.isAutoplay ? this.stopAutoplay() : this.startAutoplay();
-        }
+        }*/
     }
 })
